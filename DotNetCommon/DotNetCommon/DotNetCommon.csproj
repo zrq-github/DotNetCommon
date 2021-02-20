@@ -43,9 +43,10 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Clone\ObjectClone.cs" />
-    <Compile Include="Config\ConfigInterface.cs" />
     <Compile Include="Config\XMLConfigSingleTemplate.cs" />
     <Compile Include="Config\XMLConfigTemplate.cs" />
+    <Compile Include="Config\XmlDictionary.cs" />
+    <Compile Include="FileCommon\FolderHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
