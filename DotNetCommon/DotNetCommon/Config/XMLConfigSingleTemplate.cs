@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace DotNetCommon.Config
 {
-    public class XMLConfigSingleTemplate<T> : XMLConfigTemplate<T> where T : new()
+    public class XMLConfigSingleTemplate<T> : XMLConfigManage<T> where T : new()
     {
         public override string ConfigFilePath { get; set; } = Path.Combine(System.IO.Directory.GetCurrentDirectory(), typeof(T).Name + ".xml");
 
         #region Instance
         static T _instance = default(T);
         static object _locker = new object();
-        public static T Instance
+        public new static T Instance
         {
             get
             {
@@ -24,9 +24,10 @@ namespace DotNetCommon.Config
                     {
                         if (_instance == null)
                         {
-                            var fact = new XMLConfigTemplate<T>();
+                            var fact = new XMLConfigManage<T>();
                             string filePath = fact.ConfigFilePath;
-                            _instance = fact.Load();
+                            fact.Load();
+                            _instance = fact.Instance;
                             if (_instance == null)
                             {
                                 _instance = new T();

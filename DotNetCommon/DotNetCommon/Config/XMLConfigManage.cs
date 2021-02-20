@@ -14,12 +14,14 @@ namespace DotNetCommon.Config
     /// </summary>
     /// <typeparam name="T"></typeparam>
     [XmlRoot(nameof(T), Namespace = "", IsNullable = false)]
-    public class XMLConfigTemplate<T> where T : new()
+    public class XMLConfigManage<T> where T : new()
     {
         /// <summary>
         /// 配置文件路径
         /// </summary>
         public virtual string ConfigFilePath { get; set; } = Path.Combine(System.IO.Directory.GetCurrentDirectory(), nameof(T) + ".xml");
+
+        public virtual T Instance { get; set; } = default(T);
 
         /// <summary>
         /// 加载xml对象
@@ -59,6 +61,7 @@ namespace DotNetCommon.Config
                     fs.Close();
                 }
             }
+            Instance = obj;
             return obj;
         }
 

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<XMLConfigSingleTestClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ConfigFilePath>E:\DotNetCommon\DotNetCommon\XMLConfigSingleTestClass.xml</ConfigFilePath>
+  <OrderDate>XMLConfigSingleTestClass</OrderDate>
+  <KeyValuePairs>
+    <Item>
+      <Key>
+        <string>1.</string>
+      </Key>
+      <Value>
+        <string>1..</string>
+      </Value>
+    </Item>
+  </KeyValuePairs>
+</XMLConfigSingleTestClass>

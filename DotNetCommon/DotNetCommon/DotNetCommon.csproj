@@ -41,16 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Clone\ObjectClone.cs" />
     <Compile Include="Config\XMLConfigSingleTemplate.cs" />
-    <Compile Include="Config\XMLConfigTemplate.cs" />
+    <Compile Include="Config\XMLConfigManage.cs" />
     <Compile Include="Config\XmlDictionary.cs" />
     <Compile Include="FileCommon\FolderHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Temp\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

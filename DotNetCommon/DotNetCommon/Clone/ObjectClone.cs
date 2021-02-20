@@ -22,11 +22,12 @@ namespace DotNetCommon.Clone
         /// <param name="source"></param>
         /// <returns></returns>
         /// <exception cref="System.ArgumentException">Thrown when object is not be serializable</exception>
-        public static T CloneSerialize<T>(T source)
+        public static T ToCloneBySerialize<T>(this T source)
         {
             if (!typeof(T).IsSerializable)
             {
                 throw new ArgumentException("The type must be serializable.", "source");
+                // 如果这里出现错误,尝试在类上加[Serializable]
             }
 
             if (Object.ReferenceEquals(source, null))
