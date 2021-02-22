@@ -14,7 +14,7 @@ namespace DotNetCommon.Config
         #region Instance
         static T _instance = default(T);
         static object _locker = new object();
-        public new static T Instance
+        public static T Instance
         {
             get
             {
@@ -26,8 +26,7 @@ namespace DotNetCommon.Config
                         {
                             var fact = new XMLConfigManage<T>();
                             string filePath = fact.ConfigFilePath;
-                            fact.Load();
-                            _instance = fact.Instance;
+                            _instance = fact.Load();
                             if (_instance == null)
                             {
                                 _instance = new T();

@@ -8,12 +8,6 @@ using DotNetCommon.Clone;
 
 namespace Test
 {
-    public class XMLConfigTestClass : XMLConfigManage<XMLConfigTestClass>
-    {
-        public string OrderDate = "OrderDate";
-
-        public XmlDictionary<string, string> KeyValuePairs;
-    }
 
     public class XMLConfigSingleTestClass : XMLConfigSingleTemplate<XMLConfigSingleTestClass>
     {
@@ -21,11 +15,6 @@ namespace Test
 
         public string OrderDate = "OrderDate";
         public XmlDictionary<string, string> KeyValuePairs;
-    }
-
-    public class XMLConfgTestClass : XMLConfigManage<XMLConfgTestClass>
-    {
-
     }
 
     #region 序列化测试类
@@ -61,27 +50,12 @@ namespace Test
             #endregion
 
             #region XmlConfig 测试
-            // 普通实例测试
-            XMLConfigTestClass configTestClass = new XMLConfigTestClass();
-            configTestClass.ConfigFilePath = @"E:\DotNetCommon\DotNetCommon\XMLConfigTestClass.xml";
-            configTestClass.OrderDate = "asdasd";
-            configTestClass.KeyValuePairs = new XmlDictionary<string, string>();
-            configTestClass.KeyValuePairs.Add("1", "1");
-            configTestClass.Save();
-            System.Console.WriteLine(configTestClass.OrderDate);
-            XMLConfigTestClass configTestClass1 = new XMLConfigTestClass();
-            configTestClass1.ConfigFilePath = @"E:\DotNetCommon\DotNetCommon\XMLConfigTestClass - 副本.xml";
-            configTestClass1 = configTestClass1.Load();
-            System.Console.WriteLine(configTestClass1.OrderDate);
+            XMLConfigSingleTestClass.Instance.OrderDate = "XMLConfigSingleTestClass";
+            XMLConfigSingleTestClass.Instance.KeyValuePairs = new XmlDictionary<string, string>();
+            XMLConfigSingleTestClass.Instance.KeyValuePairs.Add("1.", "1..");
+            XMLConfigSingleTestClass.Instance.Save();
 
-            // 单例实例测试
-            //XMLConfigSingleTestClass.Instance.OrderDate = "XMLConfigSingleTestClass";
-            //XMLConfigSingleTestClass.Instance.KeyValuePairs = new XmlDictionary<string, string>();
-            //XMLConfigSingleTestClass.Instance.KeyValuePairs.Add("1.", "1..");
-            //XMLConfigSingleTestClass.Instance.Save();
-
-            //XMLConfigManage<XMLConfigSingleTestClass> xMLConfig = new XMLConfigManage<XMLConfigSingleTestClass>();
-
+            XMLConfigManage<XMLConfigSingleTestClass> xMLConfig = new XMLConfigManage<XMLConfigSingleTestClass>();
 
             //Object obj = null;
             //obj.ToCloneBySerialize();
