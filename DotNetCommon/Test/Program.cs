@@ -11,7 +11,7 @@ namespace Test
 
     public class XMLConfigSingleTestClass : XMLConfigSingleTemplate<XMLConfigSingleTestClass>
     {
-        public override string ConfigFilePath { get; set; } = @"E:\DotNetCommon\DotNetCommon\" + nameof(XMLConfigSingleTestClass) + ".xml";
+        public override string XMLFilePath { get; set; } = "实例";
 
         public string OrderDate = "OrderDate";
         public XmlDictionary<string, string> KeyValuePairs;
@@ -25,7 +25,6 @@ namespace Test
         public string path;
     }
     #endregion
-
 
     public class AAATest
     {
@@ -49,17 +48,21 @@ namespace Test
             //System.Console.WriteLine(objectClone2.name + "\n" + objectClone2.path);
             #endregion
 
-            #region XmlConfig 测试
-            XMLConfigSingleTestClass.Instance.OrderDate = "XMLConfigSingleTestClass";
-            XMLConfigSingleTestClass.Instance.KeyValuePairs = new XmlDictionary<string, string>();
-            XMLConfigSingleTestClass.Instance.KeyValuePairs.Add("1.", "1..");
-            XMLConfigSingleTestClass.Instance.Save();
+            #region 保存测试
+            //XMLConfigSingleTestClass.Instance.OrderDate = "XMLConfigSingleTestClass";
+            //XMLConfigSingleTestClass.Instance.KeyValuePairs = new XmlDictionary<string, string>();
+            //XMLConfigSingleTestClass.Instance.KeyValuePairs.Add("1.", "1..");
+            //XMLConfigSingleTestClass.Instance.Save();
+            #endregion
+            #region 读取测试
 
-            XMLConfigManage<XMLConfigSingleTestClass> xMLConfig = new XMLConfigManage<XMLConfigSingleTestClass>();
+            var b = XMLConfigSingleTestClass.Instance.Load();
+            #endregion
+
+            //XMLConfigManage<XMLConfigSingleTestClass> xMLConfig = new XMLConfigManage<XMLConfigSingleTestClass>();
 
             //Object obj = null;
             //obj.ToCloneBySerialize();
-            #endregion
         }
     }
 }

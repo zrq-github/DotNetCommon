@@ -9,19 +9,18 @@ using System.Xml.Serialization;
 
 namespace DotNetCommon.Config
 {
-    public class XMLConfigManage<T>
+    public class XMLConfigManage<T> : IXMLConfig<T>
     {
-        public virtual string ConfigFilePath { get; set; }
-
+        public virtual string XMLFilePath { get; set; }
         /// <summary>
         /// 加载xml对象
         /// </summary>
         /// <returns></returns>
-        /// <remarks>返回的xml取决于<see cref="ConfigFilePath"/></remarks>
+        /// <remarks>返回的xml取决于<see cref="XMLFilePath"/></remarks>
         public virtual T Load()
         {
-            string filePath = ConfigFilePath;
-            return Load(filePath);
+            string filePath = XMLFilePath;
+            return this.Load(filePath);
         }
         /// <summary>
         /// 从指定的文件加载对象
@@ -54,13 +53,13 @@ namespace DotNetCommon.Config
         }
 
         /// <summary>
-        /// 保存xml对象在<see cref="ConfigFilePath"/>文件中
+        /// 保存xml对象在<see cref="XMLFilePath"/>文件中
         /// </summary>
         /// <remarks>保存本类</remarks>
         public virtual void Save()
         {
-            string filePath = ConfigFilePath;
-            Save(ConfigFilePath,this);
+            string filePath = XMLFilePath;
+            Save(XMLFilePath, this);
         }
         /// <summary>
         /// 保存xml文件

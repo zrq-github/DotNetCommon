@@ -9,7 +9,7 @@ namespace DotNetCommon.Config
 {
     public class XMLConfigSingleTemplate<T> : XMLConfigManage<T> where T : new()
     {
-        public override string ConfigFilePath { get; set; } = Path.Combine(System.IO.Directory.GetCurrentDirectory(), typeof(T).Name + ".xml");
+        public override string XMLFilePath { get; set; } = "XMLConfigSingleTemplate";
 
         #region Instance
         static T _instance = default(T);
@@ -24,9 +24,10 @@ namespace DotNetCommon.Config
                     {
                         if (_instance == null)
                         {
-                            var fact = new XMLConfigManage<T>();
-                            string filePath = fact.ConfigFilePath;
-                            _instance = fact.Load();
+                            T tempInst = new T();
+                            IXMLConfig<T> iXMLConfig = (IXMLConfig<T>)tempInst;
+                            var aa = iXMLConfig.XMLFilePath;
+
                             if (_instance == null)
                             {
                                 _instance = new T();
