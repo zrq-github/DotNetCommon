@@ -11,7 +11,7 @@ namespace Test
 
     public class XMLConfigSingleTestClass : XMLConfigSingleTemplate<XMLConfigSingleTestClass>
     {
-        public override string XMLFilePath { get; set; } = "实例";
+        public override string XMLFilePath { get; set; } = @"E:\DotNetCommon\DotNetCommon\XMLConfigSingleTestClass.xml";
 
         public string OrderDate = "OrderDate";
         public XmlDictionary<string, string> KeyValuePairs;
@@ -49,10 +49,10 @@ namespace Test
             #endregion
 
             #region 保存测试
-            //XMLConfigSingleTestClass.Instance.OrderDate = "XMLConfigSingleTestClass";
-            //XMLConfigSingleTestClass.Instance.KeyValuePairs = new XmlDictionary<string, string>();
-            //XMLConfigSingleTestClass.Instance.KeyValuePairs.Add("1.", "1..");
-            //XMLConfigSingleTestClass.Instance.Save();
+            XMLConfigSingleTestClass.Instance.OrderDate = "XMLConfigSingleTestClass";
+            XMLConfigSingleTestClass.Instance.KeyValuePairs = new XmlDictionary<string, string>();
+            XMLConfigSingleTestClass.Instance.KeyValuePairs.Add("1.", "1..");
+            XMLConfigSingleTestClass.Instance.Save();
             #endregion
             #region 读取测试
 

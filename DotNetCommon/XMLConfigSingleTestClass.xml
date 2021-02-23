@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <XMLConfigSingleTestClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <ConfigFilePath>E:\DotNetCommon\DotNetCommon\XMLConfigSingleTestClass.xml</ConfigFilePath>
+  <XMLFilePath>E:\DotNetCommon\DotNetCommon\XMLConfigSingleTestClass.xml</XMLFilePath>
   <OrderDate>XMLConfigSingleTestClass</OrderDate>
   <KeyValuePairs>
     <Item>

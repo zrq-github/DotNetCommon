@@ -26,8 +26,8 @@ namespace DotNetCommon.Config
                         {
                             T tempInst = new T();
                             IXMLConfig<T> iXMLConfig = (IXMLConfig<T>)tempInst;
-                            var aa = iXMLConfig.XMLFilePath;
-
+                            string filePath = iXMLConfig.XMLFilePath;
+                            _instance = iXMLConfig.Load();
                             if (_instance == null)
                             {
                                 _instance = new T();
@@ -49,7 +49,7 @@ namespace DotNetCommon.Config
         /// </summary>
         /// <param name="filePath"></param>
         /// <returns></returns>
-        public override T Load(string filePath)
+        public new T Load(string filePath)
         {
             throw new NotSupportedException("单例类不支持指定路径加载");
         }
