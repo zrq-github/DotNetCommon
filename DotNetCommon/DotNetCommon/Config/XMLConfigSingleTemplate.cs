@@ -7,9 +7,20 @@ using System.Threading.Tasks;
 
 namespace DotNetCommon.Config
 {
+    /// <summary>
+    /// Xml单例对象
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class XMLConfigSingleTemplate<T> : XMLConfigManage<T> where T : new()
     {
-        public override string XMLFilePath { get; set; } = "XMLConfigSingleTemplate";
+        public override string XMLFilePath
+        {
+            get
+            {
+                return "XMLConfigSingleTemplate";
+            }
+        }
+
 
         #region Instance
         static T _instance = default(T);
