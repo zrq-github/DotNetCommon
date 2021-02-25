@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DotNetCommon.Clone;
+using DotNetCommon;
 
 namespace Test
 {
@@ -30,6 +31,14 @@ namespace Test
     {
         int a = 0;
         int b = 1;
+    }
+
+    public static class Class1Ex
+    {
+        public static void ToSave(this Class1 a)
+        {
+
+        }
     }
 
     class Program
@@ -58,6 +67,9 @@ namespace Test
 
             var b = XMLConfigSingleTestClass.Instance.Load();
             #endregion
+
+            Class1 class1 = new Class1();
+            class1.ToSave();
 
             //XMLConfigManage<XMLConfigSingleTestClass> xMLConfig = new XMLConfigManage<XMLConfigSingleTestClass>();
 
